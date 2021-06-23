@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CourseWorkDonorSite.Models.BloodTransfusionStation>
+
+<h1>Місця здачі крові</h1>
+
+<p>
+    <a asp-action="Create">Додати місце здачі крові</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Місто
+            </th>
+            <th>
+                Назва
+            </th>
+            <th>
+                Адреса
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.City.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StationId">Редагувати</a> |
+                <a asp-action="Details" asp-route-id="@item.StationId">Докладніше</a> |
+                <a asp-action="Delete" asp-route-id="@item.StationId">Видалити</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a asp-controller="Cities" asp-action="Index">До списку міст</a>

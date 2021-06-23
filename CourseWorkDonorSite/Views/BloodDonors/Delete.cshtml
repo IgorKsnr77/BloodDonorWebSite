@@ -1,0 +1,47 @@
+﻿@model CourseWorkDonorSite.Models.BloodDonor
+
+<h1>Видалити донора</h1>
+
+<h3>Ви впевнені, що хочете видалити донора?</h3>
+<div>
+    <h4>Донор</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Місто
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.City.Name)
+        </dd class>
+        <dt class = "col-sm-2">
+            Ім'я донора
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DonorName)
+        </dd>
+        <dt class = "col-sm-2">
+            Телефон
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            Група крові
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BloodType)
+        </dd>
+        <dt class = "col-sm-2">
+            Резус крові
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RhesusBlood)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="BloodDonorId" />
+        <input type="submit" value="Видалити" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад до списку</a>
+    </form>
+</div>

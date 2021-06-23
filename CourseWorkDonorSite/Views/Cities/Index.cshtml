@@ -1,0 +1,23 @@
+﻿@model IEnumerable<CourseWorkDonorSite.Models.City>
+
+<h1>Міста</h1>
+
+<p>
+    <a asp-action="Create">Додати місто</a>
+</p>
+<table class="table">
+    
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+			<td>
+				<a asp-action="Details" asp-route-id="@item.CityId">@Html.DisplayFor(modelItem => item.Name)</a>
+			</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CityId">Змінити</a> |
+                <a asp-action="Delete" asp-route-id="@item.CityId">Видалити</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

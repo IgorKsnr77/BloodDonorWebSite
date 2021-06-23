@@ -1,0 +1,27 @@
+﻿<div id="header-wrapper">
+	<div class="container">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<h1><a asp-controller="Home" asp-action="Index" id="logo">@CompanyInfo.Name</a></h1>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a asp-controller="Home" asp-action="Index">Головна</a></li>
+						<li><a asp-controller="BloodRecipients" asp-action="Index">Реципієнти</a></li>
+						<li><a asp-controller="BloodDonors" asp-action="Index">Донори</a></li>
+						<li><a asp-controller="Cities" asp-action="Index">Де здати кров</a></li>
+						<li><a asp-controller="Home" asp-action="Contacts">Контакти</a></li>
+						<li><a asp-controller="Account" asp-action="Logout">Вихід</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+	</div>
+</div>

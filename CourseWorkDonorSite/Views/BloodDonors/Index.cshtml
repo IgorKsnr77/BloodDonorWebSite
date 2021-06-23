@@ -1,0 +1,66 @@
+﻿@model IEnumerable<CourseWorkDonorSite.Models.BloodDonor>
+
+<h1>Донори</h1>
+
+
+<form asp-controller="BloodDonors" asp-action="Index" method="post">
+	<table>
+		<tr>
+			<th>
+				<div>
+					<label>Виберіть групу крові</label>
+					<select name="selectedItemBloodType" asp-items="@ViewBag.SelectItem1"></select>
+				</div>
+			</th>
+			<th>
+				<div>
+					<label>Виберіть резус крові</label>
+					<select name="selectedItemBloodRhesus" asp-items="@ViewBag.SelectItem2"></select>
+				</div>
+			</th>
+			<th>
+				<div>
+					<label>Виберіть місцезнаходження</label>
+					<select name="selectedItemCityDonation" asp-items="@ViewBag.SelectItem3"></select>
+				</div>
+			</th>
+
+		</tr>
+
+	</table>
+	<button class="btn btn-primary" type="submit">Знайти</button>
+</form>
+<br />
+<br />
+<p>
+	<a asp-action="Create">Додати нового донора</a>
+</p>
+<br />
+<br />
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				<p>ПІБ донора</p>
+			</th>
+
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					<a asp-action="Details" asp-route-id="@item.BloodDonorId">@Html.DisplayFor(modelItem => item.DonorName)</a>
+</td>
+
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.BloodDonorId">Редагувати</a> |
+					<a asp-action="Delete" asp-route-id="@item.BloodDonorId">Видалити</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+<a asp-action="Index">Назад до списку</a>

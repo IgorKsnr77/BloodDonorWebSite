@@ -1,0 +1,44 @@
+﻿@model CourseWorkDonorSite.Models.BloodRecipient
+
+<h1>Details</h1>
+
+<div>
+    <h4>Інформація про реципієнта</h4>
+    <hr />
+	<dl class="row">
+		<dt class="col-sm-2">
+			<p>Ім'я:</p>
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.RecipientName)
+		</dd>
+		<dt class="col-sm-2">
+			<p>Телефон:</p>
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Phone)
+		</dd>
+		<dt class="col-sm-2">
+			<p>Група крові:</p>
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.BloodType)
+		</dd>
+		<dt class="col-sm-2">
+			<p>Резус крові:</p>
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.RhesusBlood)
+		</dd>
+		<dt class="col-sm-2">
+			<p>Місцезнаходження:</p>
+		</dt>
+		<dd class="col-sm-10">
+			<a asp-controller="Cities" asp-action="Details" asp-route-id="@Model.CityId">@Html.DisplayFor(model => model.City.Name)</a>
+		</dd>
+	</dl>
+</div>
+<div>
+	<a asp-action="Edit" asp-route-id="@Model.BloodRecipientId">Редагувати</a> |
+	<a asp-action="Index">Назад до списку</a>
+</div>

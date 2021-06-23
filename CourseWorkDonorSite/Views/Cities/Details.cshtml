@@ -1,0 +1,22 @@
+﻿@model IEnumerable<CourseWorkDonorSite.Models.BloodTransfusionStation>
+
+<h1>Місця здачі крові</h1>
+
+<p>
+	<a asp-controller="BloodTransfusionStations" asp-action="Create">Створити нове місце здачі крові</a>
+</p>
+
+<div>
+	
+	<hr />
+	@foreach (var item in Model)
+	{
+		<a asp-controller="BloodTransfusionStations" asp-action="Details" asp-route-id="@item.StationId"><p>@item.Name</p></a>
+		
+		<br />
+			
+	}
+</div>
+<div>
+	<a asp-action="Index">Назад до списку</a>
+</div>
